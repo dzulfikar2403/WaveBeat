@@ -2,6 +2,7 @@ import Button from "@/components/Button";
 import CardMusic from "@/components/CardMusic";
 import ListDetailFeatures from "@/components/ListDetailFeatures";
 import Navbar from "@/components/Navbar";
+import ScrollToTop from "@/components/ScrollToTop";
 import SliderFeedback from "@/components/SliderFeedback";
 import SubBab from "@/components/SubBab";
 import { getMusicData } from "@/lib/data";
@@ -13,6 +14,7 @@ export default function Home() {
   return (
     <div className="w-full h-full">
       <Navbar />
+      <ScrollToTop />
       <main className="py-24 md:py-8">
         {/* hero */}
         <section id="home" className="px-6 pb-14 md:px-10 flex flex-col md:flex-row md:justify-between md:items-center">
@@ -26,10 +28,10 @@ export default function Home() {
             <p className="text-sm w-4/5 py-3 md:py-6">Discover millions of songs, personalized playlists, and exclusive features for an immersive listening experience.</p>
             <div className="flex items-center gap-4 py-2">
               <Button type="purple">Try free trial</Button>
-              <div className="flex items-center gap-2">
+              <a href="#explore" className="flex items-center gap-2 cursor-pointer">
                 <ArrowDown color="black" size={28} className="p-1 border-2 font-bold border-black rounded-full" />
                 <p className="text-sm font-semibold">Explore</p>
-              </div>
+              </a>
             </div>
           </div>
 
@@ -43,7 +45,7 @@ export default function Home() {
         </section>
 
         {/* count section */}
-        <section className="w-full flex flex-col items-center py-10 md:py-4 gap-16 md:gap-0 md:flex-row md:justify-evenly ">
+        <section id="explore" className="w-full flex flex-col items-center py-10 md:py-4 gap-16 md:gap-0 md:flex-row md:justify-evenly ">
           {/* ratings avg */}
           <div className="flex items-center gap-2">
             <div className="relative w-7 h-7">
@@ -245,7 +247,7 @@ export default function Home() {
         {/* close pricing */}
 
         {/* footer */}
-        <footer className="pt-14 px-4">
+        <footer className="pt-12 px-4">
           <div className="flex flex-col md:flex-row md:justify-between">
             <div className="relative w-40 h-16">
               <Image src={"/images/WaveBeat.svg"} alt="WaveBeat" fill />
