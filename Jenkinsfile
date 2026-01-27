@@ -34,7 +34,7 @@ pipeline {
             steps {
                 sh '''
                     npm i netlify-cli
-                    netlify deploy --prod --dir=dist
+                    ./node_modules/.bin/netlify deploy --prod --dir=dist
                 '''
             }
         }
