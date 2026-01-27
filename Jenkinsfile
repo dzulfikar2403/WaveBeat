@@ -28,7 +28,10 @@ pipeline {
             }
 
             steps {
-                sh 'echo "deploy..."'
+                sh '''
+                    npm i netlify-cli
+                    netlify status
+                '''
             }
         }
     }
