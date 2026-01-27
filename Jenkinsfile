@@ -11,7 +11,7 @@ pipeline {
             }
 
             steps {
-                echo '''
+                sh '''
                     node --version
                     npm --version
                     npm ci
@@ -28,7 +28,7 @@ pipeline {
             }
 
             steps {
-                echo 'deploy...'
+                sh 'echo "deploy..."'
             }
         }
     }
