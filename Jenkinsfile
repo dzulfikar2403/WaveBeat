@@ -3,6 +3,7 @@ pipeline {
 
     environment {
         NETLIFY_AUTH_TOKEN = credentials('PAT_Netlify_Jenkins')
+        NETLIFY_SITE_ID = credentials('NETLIFY_SITE_ID')
     }
 
     stages {
@@ -34,7 +35,7 @@ pipeline {
             steps {
                 sh '''
                     npm i netlify-cli@23.13.4
-                    ./node_modules/.bin/netlify deploy --create-site wavebeat --prod --dir dist
+                    ./node_modules/.bin/netlify deploy --prod --dir dist
                 '''
             }
         }
