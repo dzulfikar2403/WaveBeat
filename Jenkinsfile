@@ -34,7 +34,7 @@ pipeline {
             steps {
                 sh '''
                     npm i netlify-cli
-                    netlify status
+                    netlify deploy --prod --dir=dist
                 '''
             }
         }
