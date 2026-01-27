@@ -35,7 +35,7 @@ pipeline {
             steps {
                 sh '''
                     npm i netlify-cli
-                    ./node_modules/.bin/netlify deploy --prod --dir=out --build=false
+                    ./node_modules/.bin/netlify deploy --prod --dir=out
                 '''
             }
         }
