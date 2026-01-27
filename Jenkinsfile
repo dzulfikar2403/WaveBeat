@@ -34,7 +34,7 @@ pipeline {
             steps {
                 sh '''
                     npm i netlify-cli@23.13.4
-                    netlify deploy --create-site wavebeat --prod --dir dist
+                    ./node_modules/.bin/netlify deploy --create-site wavebeat --prod --dir dist
                 '''
             }
         }
