@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    environment {
+        NETLIFY_AUTH_TOKEN = credentials('PAT_Netlify_Jenkins')
+    }
+
     stages {
         stage('Build') {
             agent {
